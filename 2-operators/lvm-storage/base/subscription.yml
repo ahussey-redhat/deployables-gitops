@@ -2,13 +2,13 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
-  name: kubevirt-hyperconverged
-  namespace: openshift-cnv
+  name: lvms-operator
+  namespace: openshift-storage
   annotations:
     argocd.argoproj.io/sync-wave: "2"
 spec:
-  channel: stable
+  channel: <patch-me>
   installPlanApproval: Automatic
-  name: kubevirt-hyperconverged
+  name: lvms-operator
   source: redhat-operators-mirrored
   sourceNamespace: openshift-marketplace

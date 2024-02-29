@@ -1,6 +1,6 @@
----
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - banner.yml
-  - marketplace.yml
+  - operatorgroup.yml
+  - subscription.yml
+  # - instance.yml
