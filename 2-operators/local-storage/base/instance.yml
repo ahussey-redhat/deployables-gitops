@@ -2,6 +2,8 @@
 apiVersion: local.storage.openshift.io/v1alpha1
 kind: LocalVolumeDiscovery
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
   name: auto-discover-devices
   namespace: openshift-local-storage
 spec:

@@ -10,6 +10,8 @@ spec:
     - disabled: true
       name: community-operators
     - disabled: true
+      name: redhat-operators
+    - disabled: true
       name: redhat-marketplace
 ---
 apiVersion: operators.coreos.com/v1alpha1

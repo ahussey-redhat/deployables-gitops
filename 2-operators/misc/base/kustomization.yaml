@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - banner.yml
   - marketplace.yml
+  - cluster-samples.yml
