@@ -8,7 +8,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   channel: v1
-  installPlanApproval: "Automatic"
-  source: "redhat-operators-mirrored"
-  sourceNamespace: "openshift-marketplace"
-  name: "cincinnati-operator"
+  installPlanApproval: Automatic
+  source: redhat-operators-mirrored
+  sourceNamespace: openshift-marketplace
+  name: cincinnati-operator
