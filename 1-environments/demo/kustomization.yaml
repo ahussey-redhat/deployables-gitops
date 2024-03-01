@@ -8,4 +8,5 @@ resources:
   - applications/misc.yml
   - applications/nmstate.yml
   - applications/pipelines.yml
+  - applications/osus.yml
   - applications/virtualization.yml
