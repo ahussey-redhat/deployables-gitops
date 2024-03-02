@@ -8,5 +8,5 @@ metadata:
   namespace: openshift-update-service
 spec:
   replicas: 2
-  releases: registry.redhat.io/openshift/release-images
+  releases: quay.io/openshift-release-dev/ocp-release
   graphDataImage: registry.redhat.io/openshift/graph-image:latest
