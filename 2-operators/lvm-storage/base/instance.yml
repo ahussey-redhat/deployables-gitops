@@ -1,12 +1,28 @@
 ---
-apiVersion: local.storage.openshift.io/v1alpha1
-kind: LocalVolumeDiscovery
+apiVersion: lvm.topolvm.io/v1alpha1
+kind: LVMCluster
 metadata:
-  name: auto-discover-devices
-  namespace: openshift-local-storage
+  name: lvmcluster
+  namespace: openshift-storage
 spec:
-  nodeSelector:
-    nodeSelectorTerms:
-      - matchExpressions:
-          - key: node-role.kubernetes.io/worker
-            operator: Exists
+  storage:
+    deviceClasses:
+      - fstype: xfs
+        name: vg1
+        default: true
+        thinPoolConfig:
+          name: thin-pool-1
+          overprovisionRatio: 10
+          sizePercent: 90
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: lvms-vg1
+provisioner: topolvm.io
+parameters:
+  csi.storage.k8s.io/fstype: xfs
+  topolvm.io/device-class: vg1
+reclaimPolicy: Delete
+allowVolumeExpansion: true
+volumeBindingMode: WaitForFirstConsumer
