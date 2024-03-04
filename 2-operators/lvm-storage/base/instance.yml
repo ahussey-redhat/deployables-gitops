@@ -30,4 +30,4 @@ parameters:
   topolvm.io/device-class: vg1
 reclaimPolicy: Delete
 allowVolumeExpansion: true
-volumeBindingMode: Immediate
+volumeBindingMode: WaitForFirstConsumer
