@@ -4,6 +4,8 @@ kind: LVMCluster
 metadata:
   name: lvmcluster
   namespace: openshift-storage
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   storage:
     deviceClasses:
@@ -18,6 +20,9 @@ spec:
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
 metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+    argocd.argoproj.io/sync-wave: "4"
   name: lvms-vg1
 provisioner: topolvm.io
 parameters:

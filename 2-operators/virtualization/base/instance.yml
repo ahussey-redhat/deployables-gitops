@@ -1,32 +1,45 @@
 ---
-apiVersion: org.eclipse.che/v2
-kind: CheCluster
+apiVersion: hco.kubevirt.io/v1beta1
+kind: HyperConverged
 metadata:
-  name: devspaces
-  namespace: openshift-devspaces
+  name: kubevirt-hyperconverged
   annotations:
+    deployOVS: 'false'
     argocd.argoproj.io/sync-wave: "3"
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  namespace: openshift-cnv
 spec:
-  components:
-    cheServer:
-      debug: false
-      logLevel: INFO
-    metrics:
-      enable: true
-    pluginRegistry:
-      openVSXURL: ''
-  containerRegistry: {}
-  devEnvironments:
-    imagePullPolicy: IfNotPresent
-    secondsOfRunBeforeIdling: -1
-    maxNumberOfWorkspacesPerUser: -1
-    maxNumberOfRunningWorkspacesPerUser: -1
-    defaultNamespace:
-      template: <username>-devspaces
-    secondsOfInactivityBeforeIdling: 43200
-    storage:
-      pvcStrategy: per-workspace
-    persistUserHome:
-      enabled: true
-  networking: {}
+  virtualMachineOptions:
+    disableFreePageReporting: true
+  liveMigrationConfig:
+    allowAutoConverge: false
+    allowPostCopy: false
+    completionTimeoutPerGiB: 800
+    parallelMigrationsPerCluster: 5
+    parallelOutboundMigrationsPerNode: 2
+    progressTimeout: 150
+  certConfig:
+    ca:
+      duration: 48h0m0s
+      renewBefore: 24h0m0s
+    server:
+      duration: 24h0m0s
+      renewBefore: 12h0m0s
+  featureGates:
+    deployTektonTaskResources: true
+    enableCommonBootImageImport: true
+    withHostPassthroughCPU: false
+    disableMDevConfiguration: false
+    deployKubeSecondaryDNS: false
+    nonRoot: true
+    enableManagedTenantQuota: false
+    deployVmConsoleProxy: false
+    persistentReservation: false
+  workloadUpdateStrategy:
+    batchEvictionInterval: 1m0s
+    batchEvictionSize: 10
+    workloadUpdateMethods:
+      - LiveMigrate
+  uninstallStrategy: BlockUninstallIfWorkloadsExist
+  resourceRequirements:
+    vmiCPUAllocationRatio: 10
+  evictionStrategy: None
