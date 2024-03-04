@@ -9,4 +9,4 @@ metadata:
 spec:
   replicas: 2
   releases: quay.io/openshift-release-dev/ocp-release
-  graphDataImage: registry.redhat.io/openshift/graph-image:latest
+  graphDataImage: witness-node.uotest01.poc.lab.local:8443/openshift/graph-image:latest
