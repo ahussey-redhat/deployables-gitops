@@ -3,14 +3,32 @@ kind: Secret
 apiVersion: v1
 metadata:
   name: mysql
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 data:
   MSSQL_SA_PASSWORD: UGFzc3dvcmQxMjMh
 type: Opaque
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mssql-data
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  accessModes:
+    - ReadWriteOnce
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: 8Gi
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mssql-deployment
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   replicas: 1
   selector:
@@ -63,6 +81,8 @@ apiVersion: v1
 kind: Service
 metadata:
   name: mssql-deployment
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   selector:
     app: mssql
@@ -73,12 +93,11 @@ spec:
       name: mssql
   type: LoadBalancer
 ---
----
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "3"
   name: mssql-route
   labels:
     app: mssql
