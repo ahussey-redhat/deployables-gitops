@@ -9,3 +9,4 @@ resources:
   - applications/pipelines.yml
   - applications/osus.yml
   - applications/virtualization.yml
+  - applications/workloads.yml
