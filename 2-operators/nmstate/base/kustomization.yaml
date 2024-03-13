@@ -6,4 +6,3 @@ resources:
   - operatorgroup.yml
   - subscription.yml
   - instance.yml
-  # - management_network.yml
