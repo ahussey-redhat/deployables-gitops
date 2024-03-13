@@ -3,6 +3,8 @@ apiVersion: console.openshift.io/v1
 kind: ConsoleNotification
 metadata:
   name: classification-banner-top
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   backgroundColor: '#4E92F6'
   color: '#FFFFFF'

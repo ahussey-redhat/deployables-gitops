@@ -6,3 +6,4 @@ resources:
   - marketplace.yml
   - additional_ca.yml
   - cluster-samples.yml
+  - imagetagmirrorset.yml
