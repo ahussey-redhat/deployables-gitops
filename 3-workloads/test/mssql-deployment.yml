@@ -40,16 +40,13 @@ spec:
         app: mssql
     spec:
       terminationGracePeriodSeconds: 30
-      hostname: mssqlinst
-      securityContext:
-        fsGroupChangePolicy: OnRootMismatch
       containers:
       - name: mssql
         image: mcr.microsoft.com/mssql/server:2022-latest
         resources:
           requests:
-            memory: "2G"
-            cpu: "2000m"
+            memory: "512M"
+            cpu: "500m"
           limits:
             memory: "4G"
             cpu: "4000m"
@@ -91,24 +88,3 @@ spec:
       port: 1433
       targetPort: 1433
       name: mssql
----
-kind: Route
-apiVersion: route.openshift.io/v1
-metadata:
-  annotations:
-    argocd.argoproj.io/sync-wave: "3"
-  name: mssql-route
-  labels:
-    app: mssql
-spec:
-  subdomain: mssql-test
-  to:
-    kind: Service
-    name: mssql-deployment
-    weight: 100
-  port:
-    targetPort: mssql
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Allow
-  wildcardPolicy: None
