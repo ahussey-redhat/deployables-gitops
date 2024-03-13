@@ -43,3 +43,6 @@ spec:
   resourceRequirements:
     vmiCPUAllocationRatio: 10
   evictionStrategy: None
+  storageImport:
+    insecureRegistries:
+      - <change-me>
