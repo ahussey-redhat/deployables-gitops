@@ -8,8 +8,5 @@ patches:
       name: update-service
     patch: |-
       - op: replace
-        path: /spec/graphDataImage
-        value: 'witness-node.uotest01.poc.lab.local:8443/openshift/graph-image:latest'
-      - op: replace
         path: /spec/releases
         value: 'witness-node.uotest01.poc.lab.local:8443/openshift/release-images'
