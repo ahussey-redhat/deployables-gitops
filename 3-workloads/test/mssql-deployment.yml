@@ -51,8 +51,8 @@ spec:
             memory: "2G"
             cpu: "2000m"
           limits:
-            memory: "2G"
-            cpu: "2000m"
+            memory: "4G"
+            cpu: "4000m"
         ports:
         - containerPort: 1433
         securityContext:
@@ -91,7 +91,6 @@ spec:
       port: 1433
       targetPort: 1433
       name: mssql
-  type: LoadBalancer
 ---
 kind: Route
 apiVersion: route.openshift.io/v1
