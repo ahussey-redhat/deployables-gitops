@@ -1,19 +1,19 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base
+  - banner.yml
 patches:
   - target:
       kind: ConsoleNotification
-      name: classification-banner-top
+      name: global-notification-top
     patch: |-
       - op: replace
         path: /spec/text
-        value: 'Development Instance - CLASSIFICATION //UNOFFICIAL'
+        value: 'Configured by CORE'
   - target:
       kind: ConsoleNotification
-      name: classification-banner-bottom
+      name: global-notification-bottom
     patch: |-
       - op: replace
         path: /spec/text
-        value: 'Development Instance - CLASSIFICATION //UNOFFICIAL'
+        value: 'Contact core-admin@poc.lab.local for L3 support'

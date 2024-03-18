@@ -4,3 +4,4 @@ metadata:
   name: kustomization-file
 resources:
   - acs-operator.yml
+  - misc.yml

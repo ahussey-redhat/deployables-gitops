@@ -2,11 +2,11 @@
 apiVersion: console.openshift.io/v1
 kind: ConsoleNotification
 metadata:
-  name: classification-banner-top
+  name: global-notification-top
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  backgroundColor: '#4E92F6'
+  backgroundColor: '#ff91a4'
   color: '#FFFFFF'
   location: BannerTop
   text: "<change-me>"
@@ -14,9 +14,9 @@ spec:
 apiVersion: console.openshift.io/v1
 kind: ConsoleNotification
 metadata:
-  name: classification-banner-bottom
+  name: global-notification-bottom
 spec:
-  backgroundColor: '#4E92F6'
+  backgroundColor: '#ff91a4'
   color: '#FFFFFF'
   location: BannerBottom
   text: "<change-me>"
