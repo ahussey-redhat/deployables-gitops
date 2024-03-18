@@ -6,9 +6,6 @@ resources:
   - applications/aap-operator.yml
   - applications/acs-operator.yml
   - applications/acm-operator.yml
-  - applications/ack-s3-operator.yml
-  - applications/logging-operator.yml
-  - applications/elasticsearch-operator.yml
   - applications/misc.yml
   - applications/spoke
   - applications/devspaces.yml
