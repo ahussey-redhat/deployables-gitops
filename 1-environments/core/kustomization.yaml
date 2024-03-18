@@ -10,7 +10,6 @@ resources:
   - applications/logging-operator.yml
   - applications/elasticsearch-operator.yml
   - applications/misc.yml
-  - applications/quay-operator.yml
   - applications/spoke
   - applications/devspaces.yml
   - applications/misc.yml
