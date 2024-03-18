@@ -12,5 +12,4 @@ resources:
   - applications/misc.yml
   - applications/spoke
   - applications/devspaces.yml
-  - applications/misc.yml
   - applications/pipelines.yml
