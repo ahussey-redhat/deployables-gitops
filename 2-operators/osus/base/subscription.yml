@@ -9,6 +9,6 @@ metadata:
 spec:
   channel: v1
   installPlanApproval: Automatic
-  source: redhat-operators-mirrored
+  source: redhat-operators
   sourceNamespace: openshift-marketplace
   name: cincinnati-operator

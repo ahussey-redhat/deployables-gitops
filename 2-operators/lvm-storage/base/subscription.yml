@@ -10,5 +10,5 @@ spec:
   channel: <patch-me>
   installPlanApproval: Automatic
   name: lvms-operator
-  source: redhat-operators-mirrored
+  source: redhat-operators
   sourceNamespace: openshift-marketplace

@@ -10,5 +10,5 @@ spec:
   channel: stable
   installPlanApproval: Automatic
   name: kubevirt-hyperconverged
-  source: redhat-operators-mirrored
+  source: redhat-operators
   sourceNamespace: openshift-marketplace

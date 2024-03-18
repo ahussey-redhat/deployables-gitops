@@ -10,5 +10,5 @@ spec:
   channel: stable
   installPlanApproval: Automatic
   name: kubernetes-nmstate-operator
-  source: redhat-operators-mirrored
+  source: redhat-operators
   sourceNamespace: openshift-marketplace
