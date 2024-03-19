@@ -12,7 +12,7 @@ spec:
     server: 'https://kubernetes.default.svc'
   project: default
   source:
-    path: 2-operators/rhacs/aggregate/hub/default
+    path: 2-operators/rhacs/aggregate/hub/minimal
     repoURL: >-
       https://github.com/ahussey-redhat/deployables-gitops.git
     targetRevision: main
