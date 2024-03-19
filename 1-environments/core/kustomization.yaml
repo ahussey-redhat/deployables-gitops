@@ -8,5 +8,5 @@ resources:
   - applications/acm-operator.yml
   - applications/misc.yml
   - applications/spoke
-  - applications/devspaces.yml
-  - applications/pipelines.yml
+  # - applications/devspaces.yml
+  # - applications/pipelines.yml
